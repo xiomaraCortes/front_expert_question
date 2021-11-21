@@ -14,13 +14,23 @@ export class AppComponent implements OnInit {
   indexCareer = 0;
   career = '';
   constructor() {
+    this.reset();
+  }
+
+  ngOnInit(): void {
+  }
+
+  reset(): void {
+    this.indexQuestion = 0;
+    this.indexCareer = 0;
+    this.model = new Array<QuestionItem>();
     this.model.push(new QuestionItem(
 
       new Array<string>(
         '¿Consideras que las energías renovables son el futuro\'',
-      '¿Te interesa todo lo relacionado con la alimentación?\n',
-      'Trabajar controlando la calidad de los alimentos...\n',
-        ), 'INGENIERIA DE ALIMENTOS\n', new Array<boolean>() ));
+        '¿Te interesa todo lo relacionado con la alimentación?\n',
+        'Trabajar controlando la calidad de los alimentos...\n',
+      ), 'INGENIERIA DE ALIMENTOS\n', new Array<boolean>() ));
     this.model.push(new QuestionItem(
       new Array<string>(
         '¿Consideras que las energías renovables son el futuro',
@@ -35,9 +45,6 @@ export class AppComponent implements OnInit {
         '¿Te gustaría colaborar implantando y evaluando sistemas integrados?\n',
       ), 'INGENIERIA ELECTRICA\n', new Array<boolean>() ));
     this.form = this.model[this.indexCareer].question[this.indexQuestion];
-  }
-
-  ngOnInit(): void {
   }
 
   continuesQuestion(): void {
@@ -76,8 +83,7 @@ export class AppComponent implements OnInit {
         count = tmp;
       }
     });
-    console.log('index' + index);
-    console.log('count' + count);
+
 
     if (index === -1) {
       this.career =  'No tuvimos las suficiente informacion para pronosticar tu carrera ';
