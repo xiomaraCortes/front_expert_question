@@ -24,7 +24,8 @@ export class AppComponent implements OnInit {
     this.indexQuestion = 0;
     this.indexCareer = 0;
     this.model = new Array<QuestionItem>();
-    this.model.push(new QuestionItem(
+    this.career = '';
+      this.model.push(new QuestionItem(
 
       new Array<string>(
         '¿Consideras que las energías renovables son el futuro\'',
