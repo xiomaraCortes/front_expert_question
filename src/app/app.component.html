@@ -1,0 +1,23 @@
+<div class="container-machine">
+
+
+ <div>
+   <span>{{form}}</span>
+ </div>
+ <div>
+  <input type="radio" id="html" name="fav_language" value="SI" (click)="enabledOrNot(true)">
+  <label for="html">SI</label><br>
+  <input type="radio" id="css" name="fav_language" value="NO" (click)="enabledOrNot(false)">
+  <label for="css">NO</label><br>
+ </div>
+
+  <button (click)="continuesQuestion()">Contestar</button>
+
+  <div>
+    <span>{{career}}</span>
+  </div>
+
+
+
+
+</div>
